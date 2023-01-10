@@ -6,7 +6,7 @@ variable "instance_type" {
 variable "ami_filter" {
   description = "Name filter and owner for AMI"
 
-  type = object({
+  type    = object ({
     name  = string
     owner = string
   })
@@ -17,14 +17,13 @@ variable "ami_filter" {
   }
 }
 
-variable "Environment" {
+variable "environment" {
   description = "Development Environment"
 
-  type = "object({
+  type             = object ({
     name           = string
     network_prefix = string
   })
-
   default = {
     name = "dev"
     network_prefix = "10.0"
